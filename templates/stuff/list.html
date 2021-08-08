@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load  get_last %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>video home</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/list.css">
+</head>
+
+<body>
+<div class="wrap">
+
+    <div class="container">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row">
+            <ol class="breadcrumb">
+                {% for path in res.paths %}
+                    <li class="active">{{ path }}</li>
+                {% empty %}
+                    <h1>nothing is found</h1>
+                {% endfor %}
+            </ol>
+        </div>
+        <ul class="row">
+            {% for item in res.items_ %}
+                <li class="item_wrap col-xs-4 col-sm-3 col-md-2">
+
+                        <div class="item"><a href="{{ item }}"><p> {{  item|get_last:item  }}  </p></a></div>
+
+                </li>
+            {% empty %}
+                <h1>nothing is found</h1>
+            {% endfor %}
+        </ul>
+
+    </div>
+</div>
+</body>
+
+</html>

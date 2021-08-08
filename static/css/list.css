@@ -1,0 +1,30 @@
+.wrap {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 2vw 2vw;
+  font-size: 20px;
+  text-align: center;
+}
+.wrap .container {
+  background-image: url(/static/imgs/bg.jpg);
+  background-size: 100%;
+  border-radius: 5px;
+}
+.wrap .container .row .item_wrap {
+  box-sizing: border-box;
+  height: 120px;
+  padding: 5px 5px;
+  text-align: center;
+}
+.wrap .container .row .item_wrap p {
+  word-break: break-all;
+}
+.wrap .container .row .item_wrap a {
+  text-decoration: none;
+}
+.wrap .container .row .item_wrap .item {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
